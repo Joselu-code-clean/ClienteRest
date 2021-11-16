@@ -11,8 +11,8 @@ import com.example.ClienteRest.service.RotorService;
 @SpringBootApplication
 public class ClienteRestApplication implements CommandLineRunner{
 	
-	@Autowired
-	private  RotorService rotorService;
+	
+	private  RotorService rotorService = new RotorService();
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClienteRestApplication.class, args);

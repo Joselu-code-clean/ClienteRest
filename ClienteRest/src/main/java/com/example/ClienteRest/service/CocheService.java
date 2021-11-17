@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 
-public class RotorService {
+public class CocheService {
 
 	RestTemplate restTemplate = new RestTemplate();
 	String urlBase = "http://localhost:8080/";
@@ -16,7 +16,7 @@ public class RotorService {
 	String closeEndPoint = "close";
 	String halfOpenEndPoint = "halfopen";
 	
-	Logger logger = LoggerFactory.getLogger(RotorService.class);
+	Logger logger = LoggerFactory.getLogger(CocheService.class);
 
 	
 	

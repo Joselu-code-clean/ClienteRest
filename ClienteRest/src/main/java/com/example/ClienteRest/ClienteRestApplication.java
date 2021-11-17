@@ -6,13 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.ClienteRest.model.Coche;
-import com.example.ClienteRest.service.RotorService;
+import com.example.ClienteRest.service.CocheService;
 
 @SpringBootApplication
 public class ClienteRestApplication implements CommandLineRunner{
 	
 	
-	private  RotorService rotorService = new RotorService();
+	private  CocheService cocheService = new CocheService();
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClienteRestApplication.class, args);
@@ -30,12 +30,12 @@ public class ClienteRestApplication implements CommandLineRunner{
 		try {
 			for (int i = 0; i < 5 && coche.getStatus().equals("open"); i++) {
 				coche.setStatus("half-open");
-				rotorService.setToHalfOpen();
+				cocheService.setToHalfOpen();
 				Thread.sleep(2000);
 				if (coche.getStatus().equals("open")) {
-					rotorService.setToClose();
+					cocheService.setToClose();
 				}else if (coche.getStatus().equals("half-open")) {
-					rotorService.setToClose();
+					cocheService.setToClose();
 				}			
 				
 				
